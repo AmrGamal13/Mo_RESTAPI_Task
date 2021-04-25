@@ -1,5 +1,15 @@
+version: 2.1
+
+
+workflows:
+  test:
+    jobs:
+      - test
+
+
+
 jobs:
-  build-and-test:
+  test:
     docker:
       - image: cimg/openjdk:16.0.0
     steps:

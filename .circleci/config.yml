@@ -8,7 +8,7 @@ workflows:
   test:
     jobs:
       - maven/test
-          maven_command: mvn clean test
+          maven_command: 'mvn clean test'
 
 
 

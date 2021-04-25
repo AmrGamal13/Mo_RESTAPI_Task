@@ -19,4 +19,10 @@ jobs:
     steps:
       - checkout
       - run: java --version
+      - run:
+            name: Install Dependencies
+            command: >-
+              << parameters.mvn_path >> dependency:go-offline <<#
+              parameters.settings_file >> --settings << parameters.settings_file
+              >><</ parameters.settings_file >>
       - run: mvn clean test

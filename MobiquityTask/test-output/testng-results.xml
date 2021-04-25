@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="73625" started-at="2021-04-22T16:13:19Z" finished-at="2021-04-22T16:14:32Z">
+  <suite name="Default suite" duration-ms="79593" started-at="2021-04-24T19:05:21Z" finished-at="2021-04-24T19:06:41Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="73625" started-at="2021-04-22T16:13:19Z" finished-at="2021-04-22T16:14:32Z">
+    <test name="Default test" duration-ms="79593" started-at="2021-04-24T19:05:21Z" finished-at="2021-04-24T19:06:41Z">
       <class name="MobiquityAPIs.GetAPITest">
-        <test-method status="PASS" signature="TestDemo()[pri:0, instance:MobiquityAPIs.GetAPITest@776a6d9b]" name="TestDemo" is-config="true" duration-ms="322" started-at="2021-04-22T16:13:19Z" finished-at="2021-04-22T16:13:19Z">
+        <test-method status="PASS" signature="TestDemo()[pri:0, instance:MobiquityAPIs.GetAPITest@264f218]" name="TestDemo" is-config="true" duration-ms="304" started-at="2021-04-24T19:05:21Z" finished-at="2021-04-24T19:05:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDemo -->
-        <test-method status="PASS" signature="getAPITest()[pri:1, instance:MobiquityAPIs.GetAPITest@776a6d9b]" name="getAPITest" duration-ms="73174" started-at="2021-04-22T16:13:19Z" finished-at="2021-04-22T16:14:32Z">
+        <test-method status="PASS" signature="getAPITest()[pri:1, instance:MobiquityAPIs.GetAPITest@264f218]" name="getAPITest" duration-ms="78900" started-at="2021-04-24T19:05:22Z" finished-at="2021-04-24T19:06:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAPITest -->

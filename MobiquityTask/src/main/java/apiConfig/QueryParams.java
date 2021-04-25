@@ -6,22 +6,17 @@ import java.util.Map;
 public class QueryParams {
 
 	//query params
-	public Map<String, String> defaultqueryParams(){
-		Map<String, String> queryparam = new HashMap<String, String>();
-		queryparam.put("dist-max", "10LD");
-		//queryparam.put("sort", "dist");
-		//queryparam.put("body", "ALL");
-
+	public Map<String, Integer> defaultqueryParams(int id){
+		Map<String, Integer> queryparam = new HashMap<String, Integer>();
+		queryparam.put("userId", id);
+		
 		return queryparam;
 
 	}
 
-	//query params
-	public Map<String, String> queryParamsdate(){
-		Map<String, String> queryparam = new HashMap<String, String>();
-		queryparam.put("dist-max", "10LD");
-		//queryparam.put("sort", "dist");
-		//queryparam.put("date-min", "2018-01-01");
+	public Map<String, Integer> queryParamsPostID(int postID){
+		Map<String, Integer> queryparam = new HashMap<String, Integer>();
+		queryparam.put("postId", postID);
 
 		return queryparam;
 

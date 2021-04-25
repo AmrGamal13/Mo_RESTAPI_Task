@@ -1,15 +1,19 @@
+orbs:
+  maven: circleci/maven@1.2.0
+  
 version: 2.1
 
 
 workflows:
   test:
     jobs:
-      - test
+      - maven/test
+          maven_command: mvn clean test
 
 
 
 jobs:
-  test:
+  mave/test:
     docker:
       - image: cimg/openjdk:16.0.0
     steps:

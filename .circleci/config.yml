@@ -22,8 +22,8 @@ jobs:
     steps:
       - checkout
       - run: java --version
-      - run: mvn -o clean test
+      - run: mvn clean test
       - save_cache:
           key: dmp-{{ checksum "pom.xml" }}
           paths:
-          - ~/.m2
+            - ~/.m2

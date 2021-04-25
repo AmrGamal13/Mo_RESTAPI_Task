@@ -19,4 +19,4 @@ jobs:
     steps:
       - checkout
       - run: java --version
-      - maven_command: mvn clean test
+      - run: mvn clean test

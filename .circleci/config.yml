@@ -4,8 +4,7 @@ version: 2.1
 workflows:
   maven_test:
     jobs:
-      - maven/test:
-          app_src_directory: alpha
+      - maven/test
           
 
 

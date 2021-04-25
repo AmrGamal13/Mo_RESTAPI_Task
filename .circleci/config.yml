@@ -19,10 +19,14 @@ jobs:
     steps:
       - checkout
       - run: java --version
-      - run:
-            name: Install Dependencies
-            command: >-
-              << parameters.mvn_path >> dependency:go-offline <<#
-              parameters.settings_file >> --settings << parameters.settings_file
-              >><</ parameters.settings_file >>
-      - run: mvn clean test
+      run:
+        command: |
+          mvn clean test
+          PROJECT_VERSION=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+          cd it/
+          find . -type f -exec sed -i 's/0.35-SNAPSHOT/'"$PROJECT_VERSION"'/g' {} +
+          mvn clean install
+    - save_cache:
+        key: dmp-{{ checksum "pom.xml" }}
+        paths:
+        - ~/.m2

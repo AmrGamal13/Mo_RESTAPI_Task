@@ -23,6 +23,9 @@ jobs:
       - checkout:
            path: ~/Mo_RESTAPI_Task/MobiquityTask/
       - run: java --version
+      - run:
+          command: |
+            ls
       - run: mvn dependency:go-offline
       - run: mvn clean test
       - save_cache:

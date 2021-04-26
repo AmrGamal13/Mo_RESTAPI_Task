@@ -23,10 +23,9 @@ jobs:
       - checkout:
            path: ~/Mo_RESTAPI_Task/MobiquityTask/
       - run: java --version
-      - run:
-          command: |
-            ls
+      - run: mvn dependency:go-offline
+      - run: mvn clean test
       - save_cache:
-          key: Mo_RESTAPI_Task-{{ checksum "pom.xml" }}
+          key: MobiquityTask-{{ checksum "pom.xml" }}
           paths:
             - ~/.m2

@@ -21,7 +21,7 @@ jobs:
           
     steps:
       - checkout
-          path: ~/Mo_RESTAPI_Task
+            path: ~/Mo_RESTAPI_Task
       - run: java --version
       - run: mvn dependency:go-offline
       - run: mvn clean test

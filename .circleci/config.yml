@@ -20,8 +20,8 @@ jobs:
           MAVEN_OPTS: -Xmx3200m
           
     steps:
-      - checkout
-            path: ~/Mo_RESTAPI_Task
+      - checkout:
+           path: ~/Mo_RESTAPI_Task
       - run: java --version
       - run: mvn dependency:go-offline
       - run: mvn clean test

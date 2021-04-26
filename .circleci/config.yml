@@ -14,7 +14,7 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk-stretch
       
-    working_directory: ~/Mo_RESTAPI_Task
+    working_directory: ~/Mo_RESTAPI_Task/MobiquityTask
     environment:
           # Customize the JVM maximum heap limit
           MAVEN_OPTS: -Xmx3200m
@@ -25,6 +25,6 @@ jobs:
       - run: mvn dependency:go-offline
       - run: mvn clean test
       - save_cache:
-          key: Mo_RESTAPI_Task-{{ checksum "pom.xml" }}
+          key: Mo_RESTAPI_Task/MobiquityTask-{{ checksum "pom.xml" }}
           paths:
             - ~/.m2

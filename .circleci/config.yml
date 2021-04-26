@@ -26,6 +26,6 @@ jobs:
       - run: mvn dependency:go-offline
       - run: mvn clean test
       - save_cache:
-          key: /Mo_RESTAPI_Task/MobiquityTask/-{{ checksum "pom.xml" }}
+          key: Mo_RESTAPI_Task/MobiquityTask-{{ checksum "pom.xml" }}
           paths:
             - ~/.m2

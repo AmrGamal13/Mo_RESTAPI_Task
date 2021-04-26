@@ -8,13 +8,13 @@ workflows:
           
 
 
+working_directory: /tmp
 
 jobs:
   maven/test:
     docker:
       - image: circleci/openjdk:8-jdk-stretch
       
-    working_directory: ~/Mo_RESTAPI_Task/MobiquityTask/project
     environment:
           # Customize the JVM maximum heap limit
           MAVEN_OPTS: -Xmx3200m
@@ -25,6 +25,20 @@ jobs:
       - run: mvn dependency:go-offline
       - run: mvn clean test
       - save_cache:
-          key: Mo_RESTAPI_Task/MobiquityTask-{{ checksum "pom.xml" }}
+          key: Dummycircleci-{{ checksum "pom.xml" }}
           paths:
             - ~/.m2
+      - test_results_path: ~/test-output/Report/test
+      - run:
+          name: Creating Dummy Artifacts
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
+
+      - store_artifacts:
+          path: /tmp/artifacts

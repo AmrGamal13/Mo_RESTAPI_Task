@@ -13,6 +13,7 @@ import apiVerification.APIVerification;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import utils.JavaUtilities;
 
 public class PostCreateTest extends BaseTest{
 
@@ -21,8 +22,8 @@ public class PostCreateTest extends BaseTest{
 	String userId = "1";
 
 
-	@Test
-	public void CreatePostAPI() {
+	@Test(description = "Create a new post for a user and make sure the reponse is correct with the added info")
+	public void CreateNewPostAPITest() {
 		HeaderConfigs header = new HeaderConfigs();
 		test.log(LogStatus.INFO,"createPostTest started..." );
 
@@ -35,8 +36,8 @@ public class PostCreateTest extends BaseTest{
 		test.log(LogStatus.INFO,"validate the title response code..." );
 		APIVerification.responseCodeValiddation(response, 201);
 
+		JsonPath js = JavaUtilities.convertToJson(response.getBody().asString());
 
-		JsonPath js = new JsonPath(response.getBody().asString());
 		
 		test.log(LogStatus.INFO,"validate the title contents..." );
 		Assert.assertTrue(js.getString("title").equals(Title));

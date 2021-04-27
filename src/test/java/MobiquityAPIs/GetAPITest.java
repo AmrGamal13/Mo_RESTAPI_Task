@@ -18,10 +18,11 @@ public class GetAPITest extends BaseTest {
 	QueryParams param = new QueryParams();
 	ArrayList<Integer> postsId = new ArrayList<Integer>();
 	String email;
-
 	int User_id;
-	@Test(priority = 1)
-	public void getAPITest() {
+	String Username = "Delphine";
+
+	@Test(priority = 1, description = "Retrieve the list of the users and search for a certain username")
+	public void getListUsersAPITest() {
 
 		test.log(LogStatus.INFO,"getAPITest started..." );
 
@@ -36,7 +37,7 @@ public class GetAPITest extends BaseTest {
 		int No_users = js.getInt("size()");
 
 		for (int i = 0; i < No_users; i++) {
-			if (js.getString("["+i+"].username").equalsIgnoreCase("Delphine")) {
+			if (js.getString("["+i+"].username").equalsIgnoreCase(Username)) {
 				User_id = js.getInt("["+i+"].id");
 				System.out.println(User_id);
 			}	
@@ -45,8 +46,9 @@ public class GetAPITest extends BaseTest {
 
 	}
 
-	@Test(priority = 2)
-	public void getPosts() {
+	@Test(priority = 2, description = "Retrieve the posts related to that users and check the"
+			+ " email validation of the comments inside every post")
+	public void getPostsAndVerifyCommentsTest() {
 
 		test.log(LogStatus.INFO,"getPostsTest started..." );
 
@@ -58,7 +60,7 @@ public class GetAPITest extends BaseTest {
 
 		APIVerification.responseCodeValiddation(response, 200);
 
-		JsonPath json = new JsonPath(response.getBody().asString());
+		JsonPath json = JavaUtilities.convertToJson(response.getBody().asString());
 		System.out.println(response.getBody().prettyPrint());
 
 		int no_posts =  json.getInt("size()");
@@ -79,9 +81,9 @@ public class GetAPITest extends BaseTest {
 					.when().get(APIPath.GET_COMMENTS);
 			APIVerification.responseCodeValiddation(rep, 200);
 
-			JsonPath jp = new JsonPath(rep.getBody().asString());
+			JsonPath jp = JavaUtilities.convertToJson(rep.getBody().asString());
 
-			test.log(LogStatus.INFO,"Loop over comments in the post" );
+			test.log(LogStatus.INFO,"Loop over comments in the	 post" );
 
 			int no_comments = jp.getInt("size()");
 			for (int j = 0; j < no_comments; j++) {

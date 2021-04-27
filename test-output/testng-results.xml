@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16968" started-at="2021-04-26T18:57:43Z" finished-at="2021-04-26T18:58:00Z">
+  <suite name="Default suite" duration-ms="3047" started-at="2021-04-27T08:20:20Z" finished-at="2021-04-27T08:20:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16968" started-at="2021-04-26T18:57:43Z" finished-at="2021-04-26T18:58:00Z">
+    <test name="Default test" duration-ms="3047" started-at="2021-04-27T08:20:20Z" finished-at="2021-04-27T08:20:23Z">
       <class name="MobiquityAPIs.PutPostsAPITest">
-        <test-method status="PASS" signature="TestDemo()[pri:0, instance:MobiquityAPIs.PutPostsAPITest@4c5ae43b]" name="TestDemo" is-config="true" duration-ms="375" started-at="2021-04-26T18:57:43Z" finished-at="2021-04-26T18:57:44Z">
+        <test-method status="PASS" signature="TestDemo()[pri:0, instance:MobiquityAPIs.PutPostsAPITest@11dc3715]" name="TestDemo" is-config="true" duration-ms="375" started-at="2021-04-27T08:20:20Z" finished-at="2021-04-27T08:20:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDemo -->
-        <test-method status="FAIL" signature="EditExisitingPost()[pri:0, instance:MobiquityAPIs.PutPostsAPITest@4c5ae43b]" name="EditExisitingPost" duration-ms="16438" started-at="2021-04-26T18:57:44Z" finished-at="2021-04-26T18:58:00Z">
+        <test-method status="FAIL" signature="EditExisitingPost()[pri:0, instance:MobiquityAPIs.PutPostsAPITest@11dc3715]" name="EditExisitingPost" duration-ms="2524" started-at="2021-04-27T08:20:21Z" finished-at="2021-04-27T08:20:23Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [sunt aut facere repellat provident occaecati excepturi optio reprehenderit] but found [Adjusted Title]]]>
@@ -24,7 +24,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:137)
 at org.testng.Assert.assertEquals(Assert.java:118)
 at org.testng.Assert.assertEquals(Assert.java:453)
 at org.testng.Assert.assertEquals(Assert.java:463)
-at MobiquityAPIs.PutPostsAPITest.EditExisitingPost(PutPostsAPITest.java:47)
+at MobiquityAPIs.PutPostsAPITest.EditExisitingPost(PutPostsAPITest.java:67)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 12.887 s <<< FAILURE! - in TestSuite
+EditExisitingPostAPITest(MobiquityAPIs.PutPostsAPITest)  Time elapsed: 3.138 s  <<< FAILURE!
+java.lang.AssertionError: expected [sunt aut facere repellat provident occaecati excepturi optio reprehenderit] but found [Adjusted Title]
+	at MobiquityAPIs.PutPostsAPITest.EditExisitingPostAPITest(PutPostsAPITest.java:64)
+
